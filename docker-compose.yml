@@ -1,0 +1,38 @@
+services:
+ dns:
+   image: ubuntu/bind9:latest
+   container_name: dns
+   volumes:
+     - ./dns/:/etc/bind/
+   networks:
+     mail_network:
+       ipv4_address: 192.168.10.2
+
+ mail:
+   image: marooou/postfix-roundcube
+   container_name: mail
+   depends_on:
+     - dns
+   dns:
+     - 192.168.10.2
+   environment:
+     - "ADMIN_USERNAME=admin"
+     - "ADMIN_PASSWD=7"
+     - "USERS=mengano:mengano12,fulano:fulano12"
+     - "DOMAIN_NAME=mail.pumukydev.com"
+   networks:
+     mail_network:
+       ipv4_address: 192.168.10.3
+   ports:
+     - "8080:80"
+
+networks:
+ mail_network:
+   driver: bridge
+   ipam:
+     config:
+       - subnet: 192.168.10.0/24
+
+
+
+

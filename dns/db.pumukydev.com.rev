@@ -1,5 +1,5 @@
 $TTL    604800
-@       IN    SOA   dns.pumukydev.com. admin.pumukydev.com. (
+@       IN    SOA   10.168.192.in-addr.arpa. admin.pumukydev.com. (
                   3      ; Serial
                   3600   ; Refresh
                   1800   ; Retry

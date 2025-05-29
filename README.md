@@ -1,10 +1,17 @@
-# Roundcube
+<img src="./assets/roundcube.png" align="right" alt="pumuky_bot Telegram bot QR" width="20%">
 
-![Roundcube logo](./assets/roundcube.png)
+<h1 align="center">Roundcube</h1>
 
-Roundcube is an open-source webmail client that allows users to manage emails via a web browser. It supports IMAP and SMTP protocols, offering a user-friendly interface for organizing, sending, and receiving emails.
+**Roundcube** is an open-source webmail client that allows users to manage emails directly from a web browser. It supports **IMAP** and **SMTP** protocols and offers a modern and user-friendly interface to send, receive, and organize email messages.
 
-## How to use it
+## Prerequisites
+
+Make sure you have the following installed on your system:
+
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+
+## Installation
 
 Clone the repository:
 
@@ -12,40 +19,56 @@ Clone the repository:
 git clone https://github.com/PumukyDev/roundcube.git
 ```
 
-Navigate to the Roundcube folder:
+Navigate to the Roundcube directory:
 
 ```bash
 cd roundcube
 ```
 
-Deploy the containers with Docker:
+Deploy the containers:
 
 ```bash
 docker-compose up -d --build
 ```
 
-Then, open your browser and go to `http://192.168.10.3/roundcubemail/` (this is the IP address of the Roundcube container).
+Once the containers are up, open your browser and navigate to:
 
-On the login screen, sign in using the virtual user "Mengano".
+```
+http://192.168.10.3/roundcubemail/
+```
 
-![Roundcube login with mengano](./assets/roundcube-login-mengano.jpg)
+## Test Users
 
-Once logged in, click the "Compose" button to write a new email.
+You can use the following virtual accounts to test email functionality:
 
-![Roundcube compose email](./assets/roundcube-compose.jpg)
+| Username                  | Password  |
+|---------------------------|-----------|
+| mengano@pumukydev.com     | mengano12 |
+| fulano@pumukydev.com      | fulano12  |
 
-Send the email to "Fulano".
 
-![Roundcube email information](./assets/roundcube-mail.jpg)
+## How to Use
 
-After sending the email, log in as "Fulano" to check the inbox.
+### 1. Log in as Mengano
 
-![Roundcube login with fulano](./assets/roundcube-login-fulano.jpg)
+![Login as Mengano](./assets/roundcube-login-mengano.jpg)
 
-As we can see, the email has been successfully delivered.
+### 2. Click on "Compose"
 
-![Roundcube listing email](./assets/roundcube-list-mail.jpg)
+![Compose button](./assets/roundcube-compose.jpg)
 
-The email has been correctly received.
+### 3. Write and send a message to Fulano
 
-![Roundcube email](./assets/roundcube-show-mail.jpg)
+![Compose message](./assets/roundcube-mail.jpg)
+
+### 4. Log out and log in as Fulano
+
+![Login as Fulano](./assets/roundcube-login-fulano.jpg)
+
+### 5. Check the inbox
+
+![Inbox listing](./assets/roundcube-list-mail.jpg)
+
+### 6. Open the message
+
+![Read message](./assets/roundcube-show-mail.jpg)
